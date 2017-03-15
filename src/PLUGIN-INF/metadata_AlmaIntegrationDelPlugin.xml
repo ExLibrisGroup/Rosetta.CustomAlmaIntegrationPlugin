@@ -1,0 +1,110 @@
+<pl:metadata-config xmlns:pl="http://www.exlibrisgroup.com/Plugins/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <pl:pluginTypeName>RepositoryTaskPlugin</pl:pluginTypeName>
+  <pl:deployName>Customize Delete Alma Digital Inventory</pl:deployName>
+  <pl:className>almaIntegrationCreatePlugin.AlmaIntegrationPlugin</pl:className>
+  <pl:initParameters>
+  <fr:x_form  xmlns:fr="http://com/exlibris/digitool/common/forms/xmlbeans">
+	<form_name>Alma integration Plugin Parameters</form_name>
+	<description>Alma integration Plugin Parameters</description>
+	<grid_x>2</grid_x>
+	<md_format>1</md_format>
+	<x_fields>
+		<x_field>
+			<field_name>alma_url</field_name>
+			<label>Alma URL</label>
+			<ui_tool_tip>Alma URL</ui_tool_tip>
+			<default_value>[alma url]</default_value>
+			<single>true</single>
+			<default_value></default_value>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>api_key</field_name>
+			<label>API Key</label>
+			<ui_tool_tip>API Key</ui_tool_tip>
+			<default_value>[apikey]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>Password</x_ui_type>
+		</x_field>
+		<x_field>
+			<field_name>bibs</field_name>
+			<label>Bib Handling Method</label>
+			<ui_tool_tip>Bib Handling Method</ui_tool_tip>
+			<single>false</single>
+			<default_value>retain</default_value>
+			<mandatory>true</mandatory>
+			    <x_logic_type>String</x_logic_type>
+		          <x_ui_type>ComboBox</x_ui_type>
+		          <x_options>
+		           <x_option>
+		              <value>retain</value>
+		              <label>Retain</label>
+		            </x_option>
+		             <x_option>
+		              <value>delete</value>
+		              <label>Delete</label>
+		            </x_option>
+		            <x_option>
+		              <value>suppress</value>
+		              <label>Suppress</label>
+		            </x_option>
+	          </x_options>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>REMOVE_MMS_ID</field_name>
+			<label>Remove MMS ID</label>
+			<ui_tool_tip>Remove MMS ID</ui_tool_tip>
+			<single>false</single>
+			<mandatory>false</mandatory>
+			<x_logic_type>String</x_logic_type>
+				<x_ui_type>Checkbox</x_ui_type>
+			<x_options>
+				<x_option>
+					<value>true</value>
+					<label></label>
+				</x_option>
+			</x_options>
+		</x_field>
+		<x_field>
+			<field_name>action</field_name>
+			<label>mode</label>
+			<ui_tool_tip>mode</ui_tool_tip>
+			<single>true</single>
+			<default_value>delete</default_value>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>Hidden</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+	</x_fields>
+	</fr:x_form>
+  </pl:initParameters>
+  <pl:description>Delete remote digital inventory from alma for an IE </pl:description>
+  <pl:version>1</pl:version>
+  <pl:materialType>DIGITAL</pl:materialType>
+  <pl:module>Repository</pl:module>
+  <pl:generalType>TASK</pl:generalType>
+  <pl:publicApi>N</pl:publicApi>
+  <pl:implType>java</pl:implType>
+  <pl:contactPerson>
+    <contact_info xmlns="http://www.exlibrisgroup.com/Plugins/1.0/">
+     <contactType>admin</contactType>
+      <firstName>Exlibris</firstName>
+      <lastName>Ltd</lastName>
+      <telephone1>(054)485-2328</telephone1>
+      <telephone2></telephone2>
+      <email>yaarac@exlibris.co.il</email>
+      <address1>Agodat Asport2 Building 9</address1>
+      <address2></address2>
+      <city>Jerusalem</city>
+      <zipCode>00000</zipCode>
+      <country>Israel</country>
+    </contact_info>
+  </pl:contactPerson>
+</pl:metadata-config>

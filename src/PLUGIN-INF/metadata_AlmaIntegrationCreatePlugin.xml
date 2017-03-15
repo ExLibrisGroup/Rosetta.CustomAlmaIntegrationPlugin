@@ -1,0 +1,148 @@
+<pl:metadata-config xmlns:pl="http://www.exlibrisgroup.com/Plugins/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  <pl:pluginTypeName>RepositoryTaskPlugin</pl:pluginTypeName>
+  <pl:deployName>Customize Create Alma Digital Inventory</pl:deployName>
+  <pl:className>almaIntegrationCreatePlugin.AlmaIntegrationPlugin</pl:className>
+  <pl:initParameters>
+  <fr:x_form  xmlns:fr="http://com/exlibris/digitool/common/forms/xmlbeans">
+	<form_name>Alma integration Plugin Parameters</form_name>
+	<description>Alma integration Plugin Parameters</description>
+	<grid_x>2</grid_x>
+	<md_format>1</md_format>
+	<x_fields>
+		<x_field>
+			<field_name>alma_url</field_name>
+			<label>Alma URL</label>
+			<ui_tool_tip>Alma URL</ui_tool_tip>
+			<default_value>[alma url]</default_value>
+			<single>false</single>
+			<default_value></default_value>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>api_key</field_name>
+			<label>API Key</label>
+			<ui_tool_tip>API Key</ui_tool_tip>
+			<default_value>[apikey]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>Password</x_ui_type>
+		</x_field>
+		<x_field>
+			<field_name>repository</field_name>
+			<label>Repository Code</label>
+			<ui_tool_tip>repository code</ui_tool_tip>
+			<default_value>[repository code]</default_value>
+			<single>false</single>
+			<default_value></default_value>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>originating_record_id</field_name>
+			<label>Originating Record ID Template</label>
+			<ui_tool_tip>Originating Record ID Template</ui_tool_tip>
+			<default_value>[originating record id]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>library</field_name>
+			<label>Library Code</label>
+			<ui_tool_tip>Library Code</ui_tool_tip>
+			<default_value>[library]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>usage_type</field_name>
+			<label>Usage Type</label>
+			<ui_tool_tip>Usage Type</ui_tool_tip>
+			<default_value>[usage type]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>label</field_name>
+			<label>Label</label>
+			<ui_tool_tip>Label</ui_tool_tip>
+			<single>false</single>
+			<default_value>dc:title</default_value>
+			<mandatory>false</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>public_note</field_name>
+			<label>Public Note</label>
+			<ui_tool_tip>Public Note</ui_tool_tip>
+			<single>false</single>
+			<default_value>dc:rights</default_value>
+			<mandatory>false</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+		<x_field>
+			<field_name>collection_id</field_name>
+			<label>Default Collection ID</label>
+			<ui_tool_tip>Default Collection ID</ui_tool_tip>
+			<default_value>[collection id]</default_value>
+			<single>false</single>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>TextField</x_ui_type>
+			<x_options></x_options>
+		</x_field>	
+		<x_field>
+			<field_name>action</field_name>
+			<label>mode</label>
+			<ui_tool_tip>mode</ui_tool_tip>
+			<single>false</single>
+			<default_value>create</default_value>
+			<mandatory>true</mandatory>
+			<x_logic_type>String</x_logic_type>
+			<x_ui_type>Hidden</x_ui_type>
+			<x_options></x_options>
+		</x_field>
+	</x_fields>
+	</fr:x_form>
+  </pl:initParameters>
+  <pl:description>Create remote digital inventory in alma for an IE </pl:description>
+  <pl:version>1</pl:version>
+  <pl:materialType>DIGITAL</pl:materialType>
+  <pl:module>Repository</pl:module>
+  <pl:generalType>TASK</pl:generalType>
+  <pl:publicApi>N</pl:publicApi>
+  <pl:implType>java</pl:implType>
+  <pl:contactPerson>
+    <contact_info xmlns="http://www.exlibrisgroup.com/Plugins/1.0/">
+     <contactType>admin</contactType>
+      <firstName>Exlibris</firstName>
+      <lastName>Ltd</lastName>
+      <telephone1>(054)485-2328</telephone1>
+      <telephone2></telephone2>
+      <email>yaarac@exlibris.co.il</email>
+      <address1>Agodat Asport2 Building 9</address1>
+      <address2></address2>
+      <city>Jerusalem</city>
+      <zipCode>00000</zipCode>
+      <country>Israel</country>
+    </contact_info>
+  </pl:contactPerson>
+</pl:metadata-config>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project name="almaIntegrationPlugin" basedir="." default="build-all">
+	<property file="build.properties" />
+	<target name="build-all" depends="clean, init, build_create_jar,build_delete_jar" />
+	<target name="clean">
+		<echo>Cleaning the ${build.dir} and ${target.dir} directories</echo>
+		<delete dir="${build.dir}" />
+		<delete dir="${target.dir}" />
+	</target>
+	<target name="init" depends="clean">
+		<echo>Creating the ${build.dir} and ${target.dir} directories</echo>
+		<mkdir dir="${build.dir}/classes" />
+		<mkdir dir="${build.dir}/lib" />
+		<mkdir dir="${target.dir}" />
+	</target>
+
+
+	
+	<target name="build_create_jar">
+		<echo> Build AlmaIntegrationCreatePlugin jar</echo>
+		<jar destfile="${target.dir}/CustomizeAlmaIntegrationCreatePlugin.jar">
+			<fileset dir="${bin.dir}" includes="**" excludes="PLUGIN-INF/metadata_AlmaIntegrationDelPlugin.xml" />
+			<fileset dir="${build.dir}" includes="*lib/*.jar" excludes="bin/**" />
+			<manifest>
+				<attribute name="Main-Class" value="almaIntegrationCreatePlugin" />
+				<attribute name="Models-Class" value="almaRestModels" />
+				<attribute name="Errors-Class" value="errorMassages" />					
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="build_delete_jar">
+		<echo> Build AlmaIntegrationDelPlugin jar</echo>
+		<jar destfile="${target.dir}/CustomizeAlmaIntegrationDelPlugin.jar">
+			<fileset dir="${bin.dir}" includes="**" excludes="PLUGIN-INF/metadata_AlmaIntegrationCreatePlugin.xml" />
+			<fileset dir="${build.dir}" includes="*lib/*.jar" excludes="bin/**" />
+			<manifest>
+				<attribute name="Main-Class" value="almaIntegrationCreatePlugin" />
+				<attribute name="Models-Class" value="almaRestModels" />
+				<attribute name="Errors-Class" value="errorMassages" />					
+			</manifest>
+		</jar>
+	</target>
+</project>
